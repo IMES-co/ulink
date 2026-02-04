@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSdia Global - Digital Service Useful Link Portal</title>
+
+    <!-- SEO -->
+    <meta name="description" content="Official Digital Service Useful Link Portal of INSdia Global. Access Aadhaar, PAN, Voter ID, Banking, Certificates and Government Services easily.">
+    <meta name="keywords" content="Sahaj Tathya Mitra Kendra, Aadhaar, PAN, Voter ID, CSC, Government Services, India">
+    <meta name="author" content="INSdia Global ">
+
+    <!-- Favicon -->
+<link rel="icon" href="#" type="image/x-icon">    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #f4f7fa;
+            color: #333;
+        }
+
+        header {
+            background: #007bff;
+            color: #fff;
+            padding: 25px 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+
+        header p {
+            margin: 8px 0 15px;
+            font-size: 1.1rem;
+        }
+
+        .back-button {
+            background: #0056b3;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 6px;
+            display: inline-block;
+        }
+
+        main {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* SEARCH BAR */
+        .search-box {
+            max-width: 500px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 14px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .section {
+            margin-bottom: 45px;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #007bff;
+            margin-bottom: 25px;
+        }
+
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .link-card {
+            background: #fff;
+            border-radius: 10px;
+            padding: 25px 15px;
+            text-align: center;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+            transition: 0.3s;
+        }
+
+        .link-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+        }
+
+        .link-card a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .highlight {
+            color: #838383;   
+            font-weight: bold;
+        }
+
+
+        /* LOGO STYLE */
+        .service-logo,
+        .link-card i {
+            width: auto;
+            height: 55px;
+            max-width: 95%;
+            font-size: 55px;   /* for Font Awesome icons */
+            object-fit: contain;
+            /* display: block; */
+            margin: 0 auto 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+}
+        .link-card i {
+            color: #007bff;
+}
+
+        footer {
+            background: #007bff;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+
+        footer a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem;
+            }
+        }
+       
+        .passport-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.passport-logo img {
+    width: 42px;
+    height: auto;
+}
+
+.passport-text {
+    text-align: left;
+    line-height: 1.2;
+}
+
+.passport-text .title {
+    font-weight: bold;
+    font-size: 15px;
+    color: #0c1364;
+}
+
+.passport-text .sub {
+    font-size: 11px;
+    color: #444;
+}
+
+.edistrict-card {
+    text-align: center;
+}
+
+/* Blue frame */
+.edistrict-badge-text {
+    background: #1696d2;
+    border-radius: 14px;
+    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: 190px;
+    margin-bottom: 10px;
+}
+
+/* Emblem inside frame */
+.badge-emblem {
+    width: 26px;
+    height: auto;
+    flex-shrink: 0;
+}
+
+/* Text block */
+.badge-text {
+    text-align: left;
+    color: #ffffff;
+    line-height: 1.1;
+}
+
+.badge-title {
+    font-size: 9px;
+    font-weight: 600;
+}
+
+.badge-main {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.badge-tagline {
+    background: #ffffff;
+    color: #2b2b6f;
+    font-size: 8px;
+    padding: 2px 5px;
+    border-radius: 8px;
+    margin-top: 3px;
+    display: inline-block;
+}
+
+/* Text below badge */
+.edistrict-main-text {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.vtax-card {
+    text-align: center;
+}
+
+/* Header badge – subtle like govt site */
+.govt-header {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 1.5px solid #2b5fd7;
+    border-radius: 6px;
+    padding: 4px 8px;
+    margin-bottom: 18px;
+    background: #ffffff;
+}
+
+/* Grey emblem */
+.govt-emblem {
+    width: 20px;
+    height: auto;
+}
+
+/* Text block */
+.govt-header-text {
+    text-align: left;
+    line-height: 1.1;
+}
+
+/* Hindi line (small & bold) */
+.govt-hindi {
+    font-size: 9px;
+    font-weight: 600;
+    color: #111;
+}
+
+/* English line */
+.govt-english {
+    font-size: 9px;
+    color: #222;
+}
+
+/* Big title */
+.vtax-title {
+    font-size: 28px;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+}
+
+/* More space between badge and title */
+.govt-header {
+    margin-bottom: 30px;   /* ⬅ increase spacing */
+}
+
+/* Smaller, more official title */
+.vtax-title {
+    font-size: 17.5px;       /* ⬅ reduced from 28px */
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    color: #333;
+    margin: 0;
+}
+
+
+
+
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>INSdia Global </h1>
+    <p>Digital Service Useful Link Portal</p>
+    <a class="back-button" href="http://cfpe.me/indra" target="_blank">Donate Here for Helping</a>
+</header>
+
+<main>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search services like Aadhaar, PAN, Voter ID...">
+    </div>
+
+    <!-- Identity Services -->
+    <section class="section">
+        <h2>Identity Services</h2>
+        <div class="links-grid">
+
+            <div class="link-card" data-name="aadhaar">
+                <a href="https://myaadhaar.uidai.gov.in/en_IN" target="_blank">
+                    <img src="https://cdn.iconscout.com/icon/free/png-512/free-aadhaar-logo-icon-svg-download-png-1747945.png?f=webp&w=256" class="service-logo">
+                    <h3>Aadhaar Services</h3>
+                </a>
+            </div>
+
+            <div class="link-card" data-name="pan">
+                <a href="https://www.incometax.gov.in" target="_blank">
+                    <img src="https://www.incometax.gov.in/iec/foportal/themes/custom/itdbase/logo.svg" class="service-logo">
+                    <h3> INCOME TAX </h3>
+                </a>
+            </div>
+
+            <div class="link-card" data-name="voter">
+                <a href="https://voters.eci.gov.in" target="_blank">
+                    <img src="https://voters.eci.gov.in/static/media/Portallogo.239672214918b407e9c7d3e4312b8ac4.svg" class="service-logo">
+                    <h3>Voter ID</h3>
+                </a>
+            </div>
+
+          
+
+            <div class="link-card" data-name="passport">
+                <a href="https://www.passportindia.gov.in" target="_blank">
+                    <div class="passport-logo">
+                        <img src="https://pspcdn.passportindia.gov.in/cdn/emblem_new.webp" alt="Passport Emblem">
+                        <div class="passport-text">
+                            <div class="title">Passport Seva</div>
+                            <div class="sub">Ministry of External Affairs</div>
+                            <div class="sub">Government of India</div>
+                        </div>
+                    </div>
+                    <h3>PASSPORT</h3>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Services -->
+    <section class="section">
+        <h2>Financial & Banking Services</h2>
+        <div class="links-grid">
+
+            <div class="link-card" data-name="npci">
+                <a href="https://www.npci.org.in" target="_blank">
+                    <img src="https://www.npci.org.in/uploads/NPCI_blue_2_93c21a643a.svg" class="service-logo">
+                    <h3>NPCI AADHAAR & BANK SEEDING MAIN SITE </h3>
+                </a>
+            </div>
+
+            <div class="link-card" data-name="jan dhan">
+                <a href="https://pmjdy.gov.in" target="_blank">
+                    <img src="https://www.pmjdy.gov.in/mypics/pmjdylogo.png" class="service-logo">
+                    <h3>PM Jan Dhan Yojana</h3>
+                </a>
+            </div>
+
+            <div class="link-card" data-name="dbt">
+                <a href="https://dbtbharat.gov.in" target="_blank">
+                    <img src="https://dbtbharat.gov.in/images/header/dbt_logo.png" class="service-logo">
+                    <h3>DBT Bharat</h3>
+                </a>
+            </div>
+
+            
+
+            <div class="link-card" data-name="pm kisan">
+                <a href="https://pmkisan.gov.in" target="_blank">
+                    <img src="https://kisanemitra.gov.in/Content/images/MOA_logo.png" class="service-logo">
+                    <h3>PM Kisan</h3>
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <!-- GOVERNMENT TAX -->
+    <section class="section">
+        <h2>Multiple Government Tax Pay & Services</h2>
+        <div class="links-grid">
+
+            
+            <div class="link-card vtax-card" data-name="vehicle tax">
+
+                <!-- GOVT HEADER BADGE -->
+                <div class="govt-header">
+            
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/250px-Emblem_of_India.svg.png"
+                      alt="Ashoka Emblem"
+                      class="govt-emblem"
+                    >
+            
+                    <div class="govt-header-text">
+                        <div class="govt-hindi">
+                            सड़क परिवहन और राजमार्ग मंत्रालय
+                        </div>
+                        <div class="govt-english">
+                            Ministry of Road Transport and Highways
+                        </div>
+                    </div>
+            
+                </div>
+            
+                <!-- PAGE TITLE -->
+                <h3 class="vtax-title">Vehicle Tax Payment</h3>
+            
+            </div>
+            
+            
+            <div class="link-card" data-name="municipal tax">
+                <a href="https://holdingtax.co.in/" target="_blank">
+                    <img src="https://holdingtax.co.in/Contents/image/biswabangla.png" class="service-logo">
+                    <h3> WEST BENGAL Municipal Property Tax Pay </h3>
+                </a>
+            </div>
+
+            <div class="link-card" data-name="panchayats tax">
+                <a href="https://prdtax.wb.gov.in/" target="_blank">
+                    <img src="https://holdingtax.co.in/Contents/image/biswabangla.png" class="service-logo">
+                    <h3> WEST BENGAL Panchayats Property Tax Pay </h3>
+                </a>
+            </div>
+
+            <div class="link-card" data-name="profession tax">
+                <a href="https://professiontax.wb.gov.in/landing/main-landing-page" target="_blank">
+                    <img src="https://professiontax.wb.gov.in/static/media/ProfessionalTax.3a7e5d8e581d0572834b.png" class="service-logo">
+                    <h3> WEST BENGAL Professional Tax Pay </h3>
+                </a>
+            </div>
+
+            <div class="link-card" data-name="BLLRO tax">
+                <a href="https://banglarbhumi.gov.in/BanglarBhumi/Home.action#" target="_blank">
+                    <img src="https://banglarbhumi.gov.in/BanglarBhumi/images/bl.png" class="service-logo">
+                    <h3> WEST BENGAL B.L.L.R.O Tax Pay </h3>
+                </a>
+            </div>
+
+        </div>
+    </section>
+    <!-- Certificates -->
+    <section class="section">
+        <h2>Certificates & Documents</h2>
+        <div class="links-grid">
+
+            <div class="link-card"data-name="Birth Certificate">
+                <a href="https://janma-mrityutathya.wb.gov.in/" target="_blank">
+                    <img src="https://janma-mrityutathya.wb.gov.in/assets/image/jm-logo.png" class="service-logo">
+                    <h3>WEST BENGAL Birth Certificate</h3>
+                </a>
+            </div>
+
+            <div class="link-card">
+                <a href="https://castcertificatewb.gov.in/" target="_blank">
+                    <img src="https://castcertificatewb.gov.in/images/biswa_bangla.png" class="service-logo">
+                    <h3>WEST BENGAL Caste Certificate</h3>
+                </a>
+            </div>
+
+            <div class="link-card edistrict-card" data-name="edistrict">
+                <a href="https://edistrict.wb.gov.in/portal/home" target="_blank">
+            
+                    <!-- BLUE BADGE -->
+                    <div class="edistrict-badge-text">
+            
+                        <!-- EMBLEM INSIDE FRAME -->
+                        <img src="https://pmkisan.gov.in/new_images/emblem.png"
+                             alt="Government Emblem"
+                             class="badge-emblem">
+            
+                        <!-- TEXT INSIDE FRAME -->
+                        <div class="badge-text">
+                            <div class="badge-title">West Bengal</div>
+                            <div class="badge-main">eDISTRICT</div>
+                            <div class="badge-tagline">
+                                Single Window Portal – Citizen Centric Services & Schemes
+                            </div>
+                        </div>
+            
+                    </div>
+            
+                    <!-- TEXT BELOW -->
+                    <h3 class="edistrict-main-text">eDISTRICT</h3>
+            
+                </a>
+            </div>
+            
+            
+            
+
+            <div class="link-card">
+                <a href="https://eshram.gov.in" target="_blank">
+                    <img src="https://eshramwebportal-megh.azureedge.net/nduwwsmedia/themes/images/e-shram-logo-english.png" class="service-logo">
+                    <h3>e-Shram Card</h3>
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Other Services -->
+    <section class="section">
+        <h2>Other Government Services</h2>
+        <div class="links-grid">
+
+            <div class="link-card" data-name="pan">
+                <a href="https://www.trackpan.utiitsl.com/PANONLINE/forms/TrackPan/trackApp" target="_blank">
+                    <img src="https://www.trackpan.utiitsl.com/PANONLINE/resources/images/uti-images/uti-new-logo.png;jsessionid=3E8809FE0A8EA8BA2AF8C250A7B740EA" class="service-logo">
+                    <h3> UTIITSL PAN Card Track </h3>
+                </a>
+            </div>
+
+            <div class="link-card" data-name="pan">
+                <a href="https://www.psaonline.utiitsl.com/psapanservices/forms/login.html/loginHome" target="_blank">
+                    <img src="https://www.trackpan.utiitsl.com/PANONLINE/resources/images/uti-images/uti-new-logo.png;jsessionid=3E8809FE0A8EA8BA2AF8C250A7B740EA" class="service-logo">
+                    <h3> UTIITSL PAN Psa Login </h3>
+                </a>
+            </div>
+
+            <div class="link-card" data-name="pan">
+                <a href="https://www.wbsedcl.in/irj/go/km/docs/internet/new_website/Home.html" target="_blank">
+                    <img src="https://www.wbsedcl.in/irj/go/km/docs/internet/new_website/images/image/logo.png" class="service-logo">
+                    <h3> WBSEDCL </h3>
+                </a>
+            </div>
+
+            <div class="link-card">
+                <a href="https://parivahan.gov.in" target="_blank">
+                    <div class="govt-header">
+            
+                        <img
+                          src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/55/Emblem_of_India.svg/250px-Emblem_of_India.svg.png"
+                          alt="Ashoka Emblem"
+                          class="govt-emblem"
+                        >
+                
+                        <div class="govt-header-text">
+                            <div class="govt-hindi">
+                                सड़क परिवहन और राजमार्ग मंत्रालय
+                            </div>
+                            <div class="govt-english">
+                                Ministry of Road Transport and Highways
+                            </div>
+                        </div>
+                
+                    </div>
+                    <h3>Driving Licence</h3>
+                </a>
+            </div>
+
+            <div class="link-card">
+                <a href="https://www.digilocker.gov.in" target="_blank">
+                    <img src="https://www.presentations.gov.in/wp-content/uploads/2020/06/Preview-20.png" class="service-logo">
+                    <h3>DigiLocker</h3>
+                </a>
+            </div>
+
+            <div class="link-card">
+                <a href="https://csc.gov.in" target="_blank">
+                    <img src="https://csc.gov.in/assets/images/digital-india.png" class="service-logo">
+                    <h3>CSC Services</h3>
+                </a>
+            </div>
+
+            <div class="link-card">
+                <a href="https://pmjay.gov.in" target="_blank">
+                    <img src="https://www.presentations.gov.in/wp-content/uploads/2020/06/PMJAY-Preview.png" class="service-logo">
+                    <h3>Ayushman Bharat</h3>
+                </a>
+            </div>
+
+            <div class="link-card">
+                <a href="https://www.nta.ac.in/" target="_blank">
+                    <img src="https://www.nta.ac.in/img/NTA_logo.png" class="service-logo">
+                    <h3>NTA Exams </h3>
+                </a>
+            </div>
+           
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <p><strong>INSdia Global</strong></p>
+    <p> <a href="#">Core Company: IMES  </a></p>
+    <p>Email: <a href="mailto:imes.co.info@gmail.com">imes.co.info@gmail.com</a></p>
+    <p>Disclaimer: All links redirect to official government websites.</p>
+</footer>
+
+
+    <script>
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".link-card");
+const sections = document.querySelectorAll(".section");
+
+// Store original h3 text only once
+cards.forEach(card => {
+    const h3 = card.querySelector("h3");
+    if (h3) {
+        h3.dataset.text = h3.innerHTML;
+    }
+});
+
+searchInput.addEventListener("keyup", () => {
+    const value = searchInput.value.trim().toLowerCase();
+
+    sections.forEach(section => {
+        let visible = false;
+
+        section.querySelectorAll(".link-card").forEach(card => {
+            const h3 = card.querySelector("h3");
+            const content = card.innerText.toLowerCase();
+
+            if (!value || content.includes(value)) {
+                card.style.display = "";
+
+                // Restore original text (NO style reset)
+                if (h3) h3.innerHTML = h3.dataset.text;
+
+                // Highlight only text
+                if (value && h3) highlight(h3, value);
+
+                visible = true;
+            } else {
+                card.style.display = "none";
+            }
+        });
+
+        section.style.display = visible ? "" : "none";
+    });
+});
+
+function highlight(el, word) {
+    const regex = new RegExp(`(${word})`, "gi");
+    el.innerHTML = el.innerHTML.replace(regex, `<span class="highlight">$1</span>`);
+}
+</script>
+
+
+
+</body>
+</html>
