@@ -1,6 +1,6 @@
 {
-  "name": "INSdia Global - Digital Service Useful Link Portal",
-  "short_name": "INSdia Global",
+  "name": "INSdia Global",
+  "short_name": "INSdia",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
