@@ -103,20 +103,33 @@
         }
 
         /* SEARCH BAR */
-        .search-box {
-            max-width: 500px;
-            margin: 0 auto 40px;
-            text-align: center;
-        }
+       .search-box {
+    width: 100%;
+    max-width: 600px;
+    padding: 0 15px;   /* left-right space */
+    margin: 0 auto 40px;
+}
 
-        .search-box input {
-            width: 100%;
-            padding: 14px;
-            font-size: 16px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-        }
+.search-box input {
+    width: 100%;
+    padding: 14px 18px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;   /* 🔥 Important */
+}
 
+@media (max-width: 768px) {
+    .search-box {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+
+    .search-box input {
+        font-size: 14px;
+        padding: 12px;
+    }
+}
         .section {
             margin-bottom: 45px;
         }
@@ -778,6 +791,7 @@ function highlight(el, word) {
 
 </body>
 </html>
+
 
 
 
