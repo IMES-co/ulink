@@ -27,6 +27,42 @@
   
 
     <style>
+        /* HEADER FLEX STYLE */
+        .main-header {
+    position: relative;
+    padding: 40px 60px;
+    text-align: center;
+}
+
+.header-logo {
+    position: absolute;
+    left: 60px;   /* PC gap */
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Logo size */
+.header-logo img {
+    height: 140px;   /* PC বড় logo */
+    width: auto;
+}
+
+/* Text center */
+.header-content {
+    text-align: center;
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 768px) {
+
+    .header-logo {
+        left: 15px;  /* Mobile-এ gap কম */
+    }
+
+    .header-logo img {
+        height: 80px;  /* Logo ছোট */
+    }
+}
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -323,11 +359,19 @@
 
 <body>
 
-<header>
-    <h1>INSdia Global </h1>
-    <p>Digital Service Useful Link Portal</p>
-    <a class="back-button" href="http://cfpe.me/indra" target="_blank">Donate Here for Helping</a>
-</header>
+    <header class="main-header">
+
+        <div class="header-logo">
+            <img src="20260204_202417.png" alt="INSdia Logo">
+        </div>
+    
+        <div class="header-content">
+            <h1>INSdia Global</h1>
+            <p>Digital Service Useful Link Portal</p>
+            <a class="back-button" href="#">Donate Here for Helping</a>
+        </div>
+    
+    </header>
 
 <main>
 
@@ -734,6 +778,7 @@ function highlight(el, word) {
 
 </body>
 </html>
+
 
 
 
