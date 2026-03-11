@@ -739,35 +739,83 @@
   
 
 
-    <script>
+   <script>
+
+const searchInput = document.getElementById("searchInput");
+const cards = document.querySelectorAll(".link-card");
+const sections = document.querySelectorAll(".section");
+
+// store original title
+cards.forEach(card => {
+    const h3 = card.querySelector("h3");
+    if (h3) {
+        h3.dataset.original = h3.textContent;
+    }
+});
+
+searchInput.addEventListener("input", function () {
+
+    const value = this.value.toLowerCase().trim();
+    const words = value.split(/\s+/).filter(Boolean);
+
+    sections.forEach(section => {
+
+        let visible = false;
+
+        section.querySelectorAll(".link-card").forEach(card => {
+
+            const text = card.textContent.toLowerCase();
+            const h3 = card.querySelector("h3");
+
+            const match = words.every(word => text.includes(word));
+
+            if (!value || match) {
+
+                card.style.display = "block";
+                visible = true;
+
+                if (h3) {
+                    h3.textContent = h3.dataset.original;
+
+                    words.forEach(word => {
+                        highlight(h3, word);
+                    });
+                }
+
+            } else {
+
+                card.style.display = "none";
+
+            }
+
+        });
+
+        section.style.display = visible ? "block" : "none";
+
+    });
+
+});
+
+
 function highlight(element, word) {
 
     if (!word) return;
 
     const regex = new RegExp(`(${word})`, "gi");
 
-    element.childNodes.forEach(node => {
+    element.innerHTML = element.textContent.replace(
+        regex,
+        '<span class="highlight">$1</span>'
+    );
 
-        if (node.nodeType === 3) { // TEXT NODE ONLY
-            const text = node.nodeValue;
-
-            if (regex.test(text)) {
-
-                const span = document.createElement("span");
-                span.innerHTML = text.replace(regex, '<span class="highlight">$1</span>');
-
-                node.replaceWith(span);
-            }
-        }
-
-    });
 }
-</script>
 
+</script>
 
 
 </body>
 </html>
+
 
 
 
