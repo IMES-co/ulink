@@ -744,7 +744,7 @@ const searchInput = document.getElementById("searchInput");
 const cards = document.querySelectorAll(".link-card");
 const sections = document.querySelectorAll(".section");
 
-// Store original h3 text only once
+// Store original h3 text
 cards.forEach(card => {
     const h3 = card.querySelector("h3");
     if (h3) {
@@ -753,32 +753,45 @@ cards.forEach(card => {
 });
 
 searchInput.addEventListener("keyup", () => {
+
     const value = searchInput.value.trim().toLowerCase();
 
+    // split words like: "v t" -> ["v","t"]
+    const words = value.split(/\s+/).filter(Boolean);
+
     sections.forEach(section => {
+
         let visible = false;
 
         section.querySelectorAll(".link-card").forEach(card => {
+
             const h3 = card.querySelector("h3");
             const content = card.innerText.toLowerCase();
 
-            if (!value || content.includes(value)) {
+            // check if ALL typed words exist
+            const match = words.every(word => content.includes(word));
+
+            if (!value || match) {
+
                 card.style.display = "";
 
-                // Restore original text (NO style reset)
-                if (h3) h3.innerHTML = h3.dataset.text;
-
-                // Highlight only text
-                if (value && h3) highlight(h3, value);
+                if (h3) {
+                    h3.innerHTML = h3.dataset.text;
+                    words.forEach(word => highlight(h3, word));
+                }
 
                 visible = true;
+
             } else {
                 card.style.display = "none";
             }
+
         });
 
         section.style.display = visible ? "" : "none";
+
     });
+
 });
 
 function highlight(el, word) {
@@ -791,6 +804,7 @@ function highlight(el, word) {
 
 </body>
 </html>
+
 
 
 
