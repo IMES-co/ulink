@@ -740,47 +740,47 @@
 
 
     <script>
+
 const searchInput = document.getElementById("searchInput");
 const cards = document.querySelectorAll(".link-card");
 const sections = document.querySelectorAll(".section");
 
-// Store original h3 text
+// Save original title text
 cards.forEach(card => {
     const h3 = card.querySelector("h3");
     if (h3) {
-        h3.dataset.text = h3.innerHTML;
+        h3.dataset.original = h3.textContent;
     }
 });
 
-searchInput.addEventListener("keyup", () => {
+searchInput.addEventListener("input", function () {
 
-    const value = searchInput.value.trim().toLowerCase();
-
-    // split words like: "v t" -> ["v","t"]
+    const value = this.value.toLowerCase().trim();
     const words = value.split(/\s+/).filter(Boolean);
 
     sections.forEach(section => {
 
-        let visible = false;
+        let sectionVisible = false;
 
         section.querySelectorAll(".link-card").forEach(card => {
 
+            const text = card.textContent.toLowerCase();
             const h3 = card.querySelector("h3");
-            const content = card.innerText.toLowerCase();
 
-            // check if ALL typed words exist
-            const match = words.every(word => content.includes(word));
+            const match = words.every(word => text.includes(word));
 
             if (!value || match) {
 
-                card.style.display = "";
+                card.style.display = "block";
+                sectionVisible = true;
 
                 if (h3) {
-                    h3.innerHTML = h3.dataset.text;
-                    words.forEach(word => highlight(h3, word));
-                }
+                    h3.innerHTML = h3.dataset.original;
 
-                visible = true;
+                    words.forEach(word => {
+                        highlight(h3, word);
+                    });
+                }
 
             } else {
                 card.style.display = "none";
@@ -788,22 +788,31 @@ searchInput.addEventListener("keyup", () => {
 
         });
 
-        section.style.display = visible ? "" : "none";
+        section.style.display = sectionVisible ? "block" : "none";
 
     });
 
 });
 
-function highlight(el, word) {
+function highlight(element, word) {
+
+    if (!word) return;
+
     const regex = new RegExp(`(${word})`, "gi");
-    el.innerHTML = el.innerHTML.replace(regex, `<span class="highlight">$1</span>`);
+
+    element.innerHTML = element.innerHTML.replace(
+        regex,
+        '<span class="highlight">$1</span>'
+    );
 }
+
 </script>
 
 
 
 </body>
 </html>
+
 
 
 
