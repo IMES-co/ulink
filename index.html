@@ -740,78 +740,35 @@
 
 
     <script>
-
-const searchInput = document.getElementById("searchInput");
-const cards = document.querySelectorAll(".link-card");
-const sections = document.querySelectorAll(".section");
-
-// Save original title text
-cards.forEach(card => {
-    const h3 = card.querySelector("h3");
-    if (h3) {
-        h3.dataset.original = h3.textContent;
-    }
-});
-
-searchInput.addEventListener("input", function () {
-
-    const value = this.value.toLowerCase().trim();
-    const words = value.split(/\s+/).filter(Boolean);
-
-    sections.forEach(section => {
-
-        let sectionVisible = false;
-
-        section.querySelectorAll(".link-card").forEach(card => {
-
-            const text = card.textContent.toLowerCase();
-            const h3 = card.querySelector("h3");
-
-            const match = words.every(word => text.includes(word));
-
-            if (!value || match) {
-
-                card.style.display = "block";
-                sectionVisible = true;
-
-                if (h3) {
-                    h3.innerHTML = h3.dataset.original;
-
-                    words.forEach(word => {
-                        highlight(h3, word);
-                    });
-                }
-
-            } else {
-                card.style.display = "none";
-            }
-
-        });
-
-        section.style.display = sectionVisible ? "block" : "none";
-
-    });
-
-});
-
 function highlight(element, word) {
 
     if (!word) return;
 
     const regex = new RegExp(`(${word})`, "gi");
 
-    element.innerHTML = element.innerHTML.replace(
-        regex,
-        '<span class="highlight">$1</span>'
-    );
-}
+    element.childNodes.forEach(node => {
 
+        if (node.nodeType === 3) { // TEXT NODE ONLY
+            const text = node.nodeValue;
+
+            if (regex.test(text)) {
+
+                const span = document.createElement("span");
+                span.innerHTML = text.replace(regex, '<span class="highlight">$1</span>');
+
+                node.replaceWith(span);
+            }
+        }
+
+    });
+}
 </script>
 
 
 
 </body>
 </html>
+
 
 
 
