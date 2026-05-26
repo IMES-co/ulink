@@ -365,7 +365,50 @@
     background-color: #00000; 
 }
 
+/* Railway Card */
+.railway-card {
+    text-align: center;
+}
 
+/* Logo wrapper */
+.railway-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 15px;
+}
+
+/* Individual logos */
+.railway-logo {
+    width: 58px;
+    height: 58px;
+    object-fit: contain;
+}
+
+/* Divider line */
+.logo-divider {
+    width: 1px;
+    height: 55px;
+    background: #cfcfcf;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+    .railway-logos {
+        gap: 10px;
+    }
+
+    .railway-logo {
+        width: 46px;
+        height: 46px;
+    }
+
+    .logo-divider {
+        height: 42px;
+    }
+}
 
 
     </style>
@@ -587,14 +630,25 @@
                 </a>
             </div>
 
-            <div class="link-card">
-                <a href="https://divyangjanid.indianrail.gov.in/" target="_blank">
-                    <img src="https://divyangjanid.indianrail.gov.in/assets/editPic.png" class="service-logo">
-                    <img src="https://divyangjanid.indianrail.gov.in/assets/login_image_divyangjan.jpg" class="service-logo">
-                    <h3> Indian Railway</h3>
-                    <p class="card-desc"> Divyangjan Card </p>
-                </a>
-            </div>
+            <div class="link-card railway-card">
+    <a href="https://divyangjanid.indianrail.gov.in/" target="_blank">
+
+        <!-- Side by Side Logos -->
+        <div class="railway-logos">
+            <img src="https://divyangjanid.indianrail.gov.in/assets/editPic.png"
+                 class="railway-logo">
+
+            <div class="logo-divider"></div>
+
+            <img src="https://divyangjanid.indianrail.gov.in/assets/login_image_divyangjan.jpg"
+                 class="railway-logo">
+        </div>
+
+        <h3>Indian Railway</h3>
+        <p class="card-desc">Divyangjan Card</p>
+
+    </a>
+</div>
 
             <div class="link-card" data-name="Caste Certificate">
                 <a href="https://castcertificatewb.gov.in/" target="_blank">
